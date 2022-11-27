@@ -1,0 +1,22 @@
+a {
+  font-size: 16px;
+  line-height: 220%;
+  color: black;
+}
+
+body {
+  font-family: monospace;
+  background-color: #eee;
+}
+
+h2 {
+  margin-bottom: 5px;
+}
+
+li {
+  list-style: none;
+}
+
+section {
+  margin-bottom: 30px;
+}

@@ -1,0 +1,78 @@
+<!doctype html>
+<html>
+<head>
+<style>
+    body{ background-color:white; }
+    #canvas{border:1px solid red; }
+</style>
+<script>
+window.onload=(function(){
+
+    // canvas related variables
+    var canvas=document.getElementById("canvas");
+    var ctx=canvas.getContext("2d");
+    var cw=canvas.width;
+    var ch=canvas.height;
+    var w = 50;
+    var h = 50;
+    var maxColors = 2;
+
+
+var myColors = ['#ffc7ae','#000000','#FFFFFF', '#ffe11f', '#f70a0a', '#240af7', '#ffc2fa', '#00be9a',
+'#fdef97', '#d417f5','#7d1af8'];
+
+    // animation interval variables
+    var nextTime=0;      // the next animation begins at "nextTime"
+    var duration=1000;   // run animation every 1000ms
+
+    var x=20;            // the X where the next rect is drawn
+
+    // start the animation
+    requestAnimationFrame(animate);
+
+    function animate(currentTime){
+
+        // wait for nextTime to occur
+        if(currentTime<nextTime){
+            // request another loop of animation
+            requestAnimationFrame(animate);
+            // time hasn't elapsed so just return
+            return;
+        }
+        // set nextTime
+        nextTime=currentTime+duration;
+
+
+
+
+          for (y = 0; y < 10; y ++) {
+
+
+
+            myColors.sort(() => Math.random() - 0.5);
+            var yPos = y * h + h * 3;
+
+
+
+            for (x = 0; x < 10; x ++) {
+
+              ctx.lineWidth = "1";
+              ctx.fillStyle = myColors[Math.floor(Math.random() * maxColors)];
+              ctx.fillRect((x + 3) * w, yPos, w, h);
+
+
+            }
+          }
+
+
+        // request another loop of animation
+        requestAnimationFrame(animate);
+    }
+
+}); // end $(function(){});
+</script>
+</head>
+<body>
+    <canvas id="canvas" width=2000 height=2000></canvas>
+</body>
+</html>

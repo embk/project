@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="Code 💻 Weave 🧵">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>punchcard generator</title>
+
+  <link rel="stylesheet" href="CSS/pattern.css">
+  <link rel="icon" href="favicon.ico">
+</head>
+
+<body>
+  <section class="options">
+
+
+    <div class="option" id="menu">
+      <!--  <a href="index.html"><img src="IMAGES/home-button.svg" alt="home-button" id="home-button"></a>-->
+      <img src="IMAGES/save-button.svg" alt="save-button" id="saveImg" onclick="saveImage()">
+      <a href="information.html"><img src="IMAGES/info-button.svg" alt="info-button" id="info-button"></a>
+    </div>
+
+    <br>
+
+
+
+    <div class="option">
+      <button type="button" class="btn patternBtn" id="patternBtn" onclick="makePattern()">CREATE PATTERN</button>
+    </div>
+
+    <br>
+
+
+  </section>
+
+  <div id="canvas-container">
+    <canvas id="myCanvas">
+      Your browser does not support the HTML5 canvas tag.
+    </canvas>
+  </div>
+
+
+  <script src="JS/sketch.js"></script>
+
+
+</body>
+
+</html>
